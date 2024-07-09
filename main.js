@@ -228,5 +228,7 @@ var romanToInt = function(s) {
       }
   }
   return result;
-
 };
+
+// time complexity is O(n), where n is the length of the input Roman numeral string
+//  space complexity is O(1), as no extra space is required beyond the minimal variables used in the algorithm
