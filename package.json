@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "name": "trainjs",
+  "version": "1.0.0",
+  "description": "taining",
+  "main": "main.js",
+  "author": "diaa",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
