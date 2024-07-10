@@ -232,3 +232,124 @@ var romanToInt = function(s) {
 
 // time complexity is O(n), where n is the length of the input Roman numeral string
 // space complexity is O(1), as no extra space is required beyond the minimal variables used in the algorithm
+
+/* Binary search Algorithm */
+const binarySearch = function(arr, target){
+    let low = 0 ;
+    let high = arr.length - 1;
+    while(low <= high){
+        let mid = Math.floor((low + high) / 2);
+        if(arr[mid] === target){
+            return mid;
+        }else if(arr[mid] < target){
+            low = mid + 1;
+        }else{
+            high = mid - 1;
+        }
+    }
+    return -1;
+}
+
+// const arr = [1,2,3,4,5,6,7,8,9,10];
+// const target = 8;
+// console.log(binarySearch(arr,target));
+// Big O = O(log n)
+
+/* Find min/max value Algorithm*/
+// const findMin = function(arr3){
+//     let minVal = arr3[0];
+//     let minIndx = 0;
+//     for(let i =1 ; i < arr3.length; i++){
+//         if(arr3[i] < minVal){ //-> find max if(arr[i] > minVal)
+//             minVal = arr3[i];
+//             minIndx = i;
+//         }
+//     }
+//     return minIndx;
+// }
+
+const findMin = function(arr3,startedSearch){
+    let minVal = arr3[startedSearch];
+    let minIndx = startedSearch;
+    for(let i = startedSearch ; i < arr3.length; i++){
+        if(arr3[i] < minVal){ //-> find max if(arr[i] > minVal)
+            minVal = arr3[i];
+            minIndx = i;
+        }
+    }
+    return minIndx;
+}
+
+// const arr3 = [2,6,5,4,1];
+// console.log(findMin(arr));
+// Big Order = O(n)
+
+
+const swap = function(x,y){
+    let temp = y;
+    y = x;
+    x = temp;
+    return [x,y];
+}
+// console.log(swap(1,9));
+
+
+/* Selection Sort Algo */
+
+// const selectionSort = function(arr2) {
+//     const findMin = function(arr3, startedSearch) {
+//         let minVal = arr3[startedSearch];
+//         let minIndx = startedSearch;
+//         for (let i = startedSearch + 1; i < arr3.length; i++) {
+//             if (arr3[i] < minVal) { // Fixed typo here
+//                 minVal = arr3[i];
+//                 minIndx = i;
+//             }
+//         }
+//         return minIndx;
+//     };
+ 
+//     const swap = function(arr, x, y) {
+//         let temp = arr[x];
+//         arr[x] = arr[y];
+//         arr[y] = temp;
+//     };
+ 
+//     for (let i = 0; i < arr2.length - 1; i++) {
+//         let minIndex = findMin(arr2, i);
+//         swap(arr2, i, minIndex);
+//     }
+ 
+//     return arr2;
+// };
+ 
+// const arr2 = [2, 6, 5, 4, 1];
+// console.log(selectionSort(arr2)); // Output should be [1, 2, 4, 5, 6]
+
+
+const selectionSort = function(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        // Assume the minimum is the first element
+        let minIndex = i;
+ 
+        // Check the rest of the array to find the real minimum
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+ 
+        // Swap the found minimum element with the first element
+        if (minIndex !== i) {
+            let temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+    }
+ 
+    return arr;
+};
+ 
+const arr = [2, 6, 5, 4, 1];
+console.log(selectionSort(arr)); // Output should be [1, 2, 4, 5, 6]
+ 
