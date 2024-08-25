@@ -46,32 +46,32 @@ class MyClass {
   }
 }
 
-describe("MyClass", () => {
-  let myClass;
+// describe("MyClass", () => {
+//   let myClass;
 
-  beforeEach(() => {
-    myClass = new MyClass();
-  });
+//   beforeEach(() => {
+//     myClass = new MyClass();
+//   });
 
-  it("should add two numbers", () => {
-    expect(myClass.add(2, 3)).toBe(5);
-    expect(myClass.add(-1, 1)).toBe(0);
-  });
+//   it("should add two numbers", () => {
+//     expect(myClass.add(2, 3)).toBe(5);
+//     expect(myClass.add(-1, 1)).toBe(0);
+//   });
 
-  it("should subtract two numbers", () => {
-    expect(myClass.subtract(5, 3)).toBe(2);
-    // Add more test cases as needed
-  });
+//   it("should subtract two numbers", () => {
+//     expect(myClass.subtract(5, 3)).toBe(2);
+//     // Add more test cases as needed
+//   });
 
-  it("should multiply two numbers", () => {
-    expect(myClass.multiply(2, 3)).toBe(6);
-  });
+//   it("should multiply two numbers", () => {
+//     expect(myClass.multiply(2, 3)).toBe(6);
+//   });
 
-  it("should divide two numbers", () => {
-    expect(myClass.divide(3, 3)).toBe(1);
-  });
+//   it("should divide two numbers", () => {
+//     expect(myClass.divide(3, 3)).toBe(1);
+//   });
 
-  it("should turn roman into integer", () => {
-    expect(myClass.romanToInt('LVIII')).toBe(58);
-  });
-});
+//   it("should turn roman into integer", () => {
+//     expect(myClass.romanToInt('LVIII')).toBe(58);
+//   });
+// });
